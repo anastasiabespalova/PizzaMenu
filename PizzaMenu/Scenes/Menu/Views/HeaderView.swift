@@ -86,16 +86,31 @@ extension HeaderView: UICollectionViewDelegate,
         
         if currentSelected != nil && currentSelected == indexPath.row
         {
-            cell.backgroundColor = MenuConstants.lightPinkColor
-            cell.categoryLabel.font = MenuConstants.categoryLabelSelectedFont
-            cell.categoryLabel.textColor = MenuConstants.brightPinkColor
+                cell.backgroundColor = MenuConstants.lightPinkColor
+                cell.categoryLabel.font = MenuConstants.categoryLabelSelectedFont
+                cell.categoryLabel.textColor = MenuConstants.brightPinkColor
         }else{
+            
             cell.backgroundColor = UIColor.white
             cell.categoryLabel.font = MenuConstants.categoryLabelUnselectedFont
             cell.categoryLabel.textColor = MenuConstants.lightPinkColor
+            
         }
         
         return cell
+    }
+    
+    func highlightCategory(index: Int) {
+        currentSelected = index
+        
+        if currentSelected != previousSelected?.row {
+            previousSelected = IndexPath(row: index, section: 0)
+            self.collectionView.reloadItems(at: [IndexPath(row: 0, section: 0),
+                                                 IndexPath(row: 1, section: 0),
+                                                 IndexPath(row: 2, section: 0),
+                                                 IndexPath(row: 3, section: 0)])
+        }
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -106,7 +121,6 @@ extension HeaderView: UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if previousSelected != nil{
             if let cell = collectionView.cellForItem(at: previousSelected!) as? Category {
-                
                 cell.backgroundColor = UIColor.white
                 cell.categoryLabel.font = MenuConstants.categoryLabelUnselectedFont
                 cell.categoryLabel.textColor = MenuConstants.lightPinkColor

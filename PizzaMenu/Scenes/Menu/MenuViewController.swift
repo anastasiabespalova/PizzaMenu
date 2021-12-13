@@ -123,14 +123,21 @@ extension MenuViewController: UITableViewDelegate,
                               UITableViewDataSource,
                               UIScrollViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
         return data.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItem", for: indexPath) as? MenuItem else { return .init() }
         
+        // very bad code, but i don't know how to track otherwise :(
+        // also don't know how to prevent flicker while switching through categories which have more than one category in between
+        if indexPath.row % 4 != 3  {
+            header.highlightCategory(index: data[indexPath.row].category.getIndex())
+        }
+       
         cell.setData(data[indexPath.row])
-        
         return cell
     }
     

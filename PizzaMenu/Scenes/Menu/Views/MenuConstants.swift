@@ -43,9 +43,9 @@ struct MenuConstants {
     // MARK: - Menu layout constants
     
     static let bannerHeightForOffset: CGFloat = 130
-    static let categoriesHeightForOffset: CGFloat = 45
-    static let headerHeight: CGFloat = 180
-    static let tableViewTop: CGFloat = 145
+    static let categoriesHeightForOffset: CGFloat = 40
+    static let headerHeight: CGFloat = 170
+    static let tableViewTop: CGFloat = 135
     
     
 }

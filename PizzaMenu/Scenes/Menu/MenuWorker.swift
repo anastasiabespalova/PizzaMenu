@@ -28,8 +28,19 @@ enum Categories: String, CaseIterable, Codable {
             return "Десерты"
         case .drinks:
             return "Напитки"
-        
-        
+        }
+    }
+    
+    func getIndex() -> Int {
+        switch self {
+        case .pizza:
+            return 0
+        case .combo:
+            return 1
+        case .desserts:
+            return 2
+        case .drinks:
+            return 3
         }
     }
 }
