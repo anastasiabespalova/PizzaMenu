@@ -70,7 +70,7 @@ class HeaderView: UIView {
     }
 }
 
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout extension
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout methods
 
 extension HeaderView: UICollectionViewDelegate,
                       UICollectionViewDataSource,
