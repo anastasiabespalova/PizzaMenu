@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol MenuDisplayLogic: AnyObject
 {
@@ -51,7 +52,7 @@ class MenuViewController: UIViewController, MenuDisplayLogic
     // MARK: View lifecycle
     
     var tableView: UITableView!
-    var header = BannersCategoriesView()
+    var header = HeaderView()
     private var data: [DisplayedItem] = []
     
     override func viewDidLoad()
@@ -82,7 +83,8 @@ class MenuViewController: UIViewController, MenuDisplayLogic
     }
     
     func addHeader() {
-        view.addSubview(header)
+        
+       view.addSubview(header)
         header.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
@@ -144,6 +146,8 @@ extension MenuViewController: UITableViewDelegate,
         header.snp.updateConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-yOffset)
         }
+        
+       
         
     }
 }

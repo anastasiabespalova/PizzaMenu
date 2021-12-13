@@ -8,11 +8,10 @@
 import UIKit
 
 class Category: UICollectionViewCell {
-    
+
     var categoryLabel: UILabel! = {
         let label = UILabel()
-        label.font = MenuConstants.categoryLabelFont
-        label.textColor = MenuConstants.lightPinkColor
+        
         return label
     }()
     

@@ -1,5 +1,5 @@
 //
-//  BannersCategoriesView.swift
+//  HeaderView.swift
 //  PizzaMenu
 //
 //  Created by Анастасия Беспалова on 12.12.2021.
@@ -11,10 +11,13 @@ protocol MenuSectionDelegate: AnyObject {
     func didSelectSegment(_ value: Categories)
 }
 
-class BannersCategoriesView: UIView {
+class HeaderView: UIView {
     
     var bannerView: UIView!
     weak var delegate: MenuSectionDelegate?
+    
+    var previousSelected : IndexPath?
+    var currentSelected : Int?
     
     var collectionView: UICollectionView = {
         
@@ -25,7 +28,6 @@ class BannersCategoriesView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(Category.self, forCellWithReuseIdentifier: "Category")
-        
         return collectionView
     }()
     
@@ -70,7 +72,7 @@ class BannersCategoriesView: UIView {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout extension
 
-extension BannersCategoriesView: UICollectionViewDelegate,
+extension HeaderView: UICollectionViewDelegate,
                            UICollectionViewDataSource,
                            UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,6 +84,17 @@ extension BannersCategoriesView: UICollectionViewDelegate,
         
         cell.setLabel(categories[indexPath.row].getRussianName())
         
+        if currentSelected != nil && currentSelected == indexPath.row
+        {
+            cell.backgroundColor = MenuConstants.lightPinkColor
+            cell.categoryLabel.font = MenuConstants.categoryLabelSelectedFont
+            cell.categoryLabel.textColor = MenuConstants.brightPinkColor
+        }else{
+            cell.backgroundColor = UIColor.white
+            cell.categoryLabel.font = MenuConstants.categoryLabelUnselectedFont
+            cell.categoryLabel.textColor = MenuConstants.lightPinkColor
+        }
+        
         return cell
     }
     
@@ -91,6 +104,17 @@ extension BannersCategoriesView: UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if previousSelected != nil{
+                   if let cell = collectionView.cellForItem(at: previousSelected!) as? Category {
+                      
+                       cell.backgroundColor = UIColor.white
+                       cell.categoryLabel.font = MenuConstants.categoryLabelUnselectedFont
+                       cell.categoryLabel.textColor = MenuConstants.lightPinkColor
+                   }
+               }
+               currentSelected = indexPath.row
+               previousSelected = indexPath
+        self.collectionView.reloadItems(at: [indexPath]) 
         delegate?.didSelectSegment(categories[indexPath.row])
     }
 }

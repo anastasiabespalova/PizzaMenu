@@ -1,8 +1,9 @@
 # Pizza Menu
 ## Description
 Pizza delivery app menu screen. Banners and categories are swipeable, categories view tap leads to the right section in menu. Menu items are derived from custom API (EasyPizzaAPI). This API provides a json with menu items info. Photos for items are derived from the URL of Dodo Pizza items
-## Used frameworks
+## Used technologies
 ### Pizza Menu
+- Swift/UIKit
 - Clean Swift
 - URLSession
 - SnapKit

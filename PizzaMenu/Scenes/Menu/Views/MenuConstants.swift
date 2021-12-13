@@ -11,7 +11,7 @@ struct MenuConstants {
     
     // MARK: - Common constants
     
-    static let lightPinkColor = UIColor(red: 233/255.0, green: 77/255.0, blue: 107/255.0, alpha: 0.5)
+    static let lightPinkColor = UIColor(red: 233/255.0, green: 77/255.0, blue: 107/255.0, alpha: 0.4)
     static let brightPinkColor = UIColor(red: 233/255.0, green: 77/255.0, blue: 107/255.0, alpha: 1.0)
     
     // MARK: - Banner constants
@@ -25,7 +25,8 @@ struct MenuConstants {
     // MARK: - Category constants
     static let categoryWidth: CGFloat = 100
     static let categoryHeight: CGFloat = 35
-    static let categoryLabelFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
+    static let categoryLabelUnselectedFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
+    static let categoryLabelSelectedFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
     static let categoryCornerRadius: CGFloat = 20
     static let categoryBorderWidth: CGFloat = 1
     
