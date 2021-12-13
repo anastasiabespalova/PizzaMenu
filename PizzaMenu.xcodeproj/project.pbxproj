@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		330EE9F5276513DF00CC147F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330EE9F4276513DF00CC147F /* AppDelegate.swift */; };
 		330EE9F7276513DF00CC147F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330EE9F6276513DF00CC147F /* SceneDelegate.swift */; };
-		330EE9FF276513DF00CC147F /* PizzaMenu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 330EE9FD276513DF00CC147F /* PizzaMenu.xcdatamodeld */; };
 		330EEA01276513EC00CC147F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330EEA00276513EC00CC147F /* Assets.xcassets */; };
 		330EEA04276513EC00CC147F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330EEA02276513EC00CC147F /* LaunchScreen.storyboard */; };
 		330EEA1627652EFD00CC147F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330EEA1527652EFD00CC147F /* MenuViewController.swift */; };
@@ -33,7 +32,6 @@
 		330EE9F1276513DF00CC147F /* PizzaMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		330EE9F4276513DF00CC147F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		330EE9F6276513DF00CC147F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		330EE9FE276513DF00CC147F /* PizzaMenu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PizzaMenu.xcdatamodel; sourceTree = "<group>"; };
 		330EEA00276513EC00CC147F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330EEA03276513EC00CC147F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		330EEA05276513ED00CC147F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				330EEA00276513EC00CC147F /* Assets.xcassets */,
 				330EEA02276513EC00CC147F /* LaunchScreen.storyboard */,
 				330EEA05276513ED00CC147F /* Info.plist */,
-				330EE9FD276513DF00CC147F /* PizzaMenu.xcdatamodeld */,
 			);
 			path = PizzaMenu;
 			sourceTree = "<group>";
@@ -303,7 +300,6 @@
 				330EEA442766312C00CC147F /* Category.swift in Sources */,
 				330EEA1627652EFD00CC147F /* MenuViewController.swift in Sources */,
 				330EEA49276636A900CC147F /* MenuItem.swift in Sources */,
-				330EE9FF276513DF00CC147F /* PizzaMenu.xcdatamodeld in Sources */,
 				330EEA1827652F3100CC147F /* MenuInteractor.swift in Sources */,
 				330EEA1C2765300B00CC147F /* MenuModels.swift in Sources */,
 				330EEA1F2765301C00CC147F /* MenuWorker.swift in Sources */,
@@ -528,19 +524,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		330EE9FD276513DF00CC147F /* PizzaMenu.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				330EE9FE276513DF00CC147F /* PizzaMenu.xcdatamodel */,
-			);
-			currentVersion = 330EE9FE276513DF00CC147F /* PizzaMenu.xcdatamodel */;
-			path = PizzaMenu.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 330EE9E9276513DF00CC147F /* Project object */;
 }

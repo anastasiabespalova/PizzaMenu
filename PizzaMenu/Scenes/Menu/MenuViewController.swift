@@ -139,16 +139,12 @@ extension MenuViewController: UITableViewDelegate,
     }
     
     func tableViewDidScroll(offset: CGFloat) {
-        let zeroOffset = offset + MenuConstants.bannerHeightForOffset
-        
-        let yOffset = zeroOffset >= MenuConstants.bannerHeightForOffset ? MenuConstants.bannerHeightForOffset : zeroOffset
+        let currentOffset = offset + MenuConstants.bannerHeightForOffset
+        let finalOffset = currentOffset >= MenuConstants.bannerHeightForOffset ? -MenuConstants.bannerHeightForOffset : -currentOffset
         
         header.snp.updateConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-yOffset)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(finalOffset)
         }
-        
-       
-        
     }
 }
 
