@@ -13,7 +13,7 @@ Pizza delivery app menu screen. Banners and categories are swipeable, categories
 
 ## Screenshots
 <p float="left">
-    <img src="https://github.com/anastasiabespalova/PizzaMenu/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202021-12-13%20at%2014.49.42.png" width=250>
-    <img src="https://github.com/anastasiabespalova/PizzaMenu/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202021-12-13%20at%2014.49.54.png" width=250>
+    <img src="https://github.com/anastasiabespalova/PizzaMenu/blob/main/Screenshots/Screenshot1.png" width=250>
+    <img src="https://github.com/anastasiabespalova/PizzaMenu/blob/main/Screenshots/Screenshot2.png" width=250>
 </p>
 
