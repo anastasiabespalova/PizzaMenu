@@ -73,8 +73,8 @@ class HeaderView: UIView {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout extension
 
 extension HeaderView: UICollectionViewDelegate,
-                           UICollectionViewDataSource,
-                           UICollectionViewDelegateFlowLayout {
+                      UICollectionViewDataSource,
+                      UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -105,16 +105,16 @@ extension HeaderView: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if previousSelected != nil{
-                   if let cell = collectionView.cellForItem(at: previousSelected!) as? Category {
-                      
-                       cell.backgroundColor = UIColor.white
-                       cell.categoryLabel.font = MenuConstants.categoryLabelUnselectedFont
-                       cell.categoryLabel.textColor = MenuConstants.lightPinkColor
-                   }
-               }
-               currentSelected = indexPath.row
-               previousSelected = indexPath
-        self.collectionView.reloadItems(at: [indexPath]) 
+            if let cell = collectionView.cellForItem(at: previousSelected!) as? Category {
+                
+                cell.backgroundColor = UIColor.white
+                cell.categoryLabel.font = MenuConstants.categoryLabelUnselectedFont
+                cell.categoryLabel.textColor = MenuConstants.lightPinkColor
+            }
+        }
+        currentSelected = indexPath.row
+        previousSelected = indexPath
+        self.collectionView.reloadItems(at: [indexPath])
         delegate?.didSelectSegment(categories[indexPath.row])
     }
 }
